@@ -1,0 +1,11 @@
+{
+  "name": "ketogenic-neurology-sites",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "build": "node src/build.mjs",
+    "serve:intl": "node src/serve.mjs dist/ketoneurology.com 4173",
+    "serve:swiss": "node src/serve.mjs dist/ketoneurologie.ch 4174"
+  }
+}
