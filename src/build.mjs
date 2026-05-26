@@ -627,6 +627,8 @@ async function copyPublicAssets(siteRoot) {
 
 async function writeRobotsAndSitemap(site, siteRoot, pages) {
   await writeFile(join(siteRoot, "robots.txt"), `User-agent: *\nAllow: /\nSitemap: ${site.canonicalBase}/sitemap.xml\n`);
+  await writeFile(join(siteRoot, "CNAME"), `${site.domain}\n`);
+  await writeFile(join(siteRoot, ".nojekyll"), "");
   const urls = pages
     .map((page) => `  <url><loc>${site.canonicalBase}${page}</loc></url>`)
     .join("\n");
